@@ -1,0 +1,26 @@
+First_name = input("Enter your First Name: ")
+Last_name = input("Enter your Last Name: ")
+Year_of_birth= int(input("Enter your Year of Birth: "))
+Next_of_kin = input("Enter the Full name of your next of kin: ")
+Residential_address = input("Enter your Residential_address: ")
+
+Year_of_retirement = Year_of_birth + 65
+Monthly_gross_pay = 100000
+Tax = int(12.5/100 * Monthly_gross_pay)
+Pension_contribution = int(7.5/100 * Monthly_gross_pay)
+Health_insurance =  int(5/100 * Monthly_gross_pay)
+Housing_contribution = int(5/100 * Monthly_gross_pay)
+
+Monthly_net_pay = Monthly_gross_pay - (Tax + Pension_contribution + Health_insurance + Housing_contribution)
+print('*'* 120)
+print(f'Huge Congratulations on joining KoleSolution {First_name} {Last_name}')
+print('Details about your year of retirement and monthly salary package:')
+print(f'Year Of Retirement is {Year_of_retirement}')
+print(f'Monthly Gross pay is {Monthly_gross_pay} Naira')
+print('Monthly Deductions are as follows:')
+print(f'Tax Deduction of 12.5%: {Tax}')
+print(f'Pension Contribution of 7.5%: {Pension_contribution}')
+print(f'Health Insurance of 5%: {Health_insurance}')
+print(f'Housing Contribution of 5%: {Housing_contribution}')
+print(f'Monthly Net Pay is {Monthly_net_pay} Naira')
+print('*'* 120)
