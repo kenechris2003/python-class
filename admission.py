@@ -32,7 +32,7 @@ while jamb_result >= jamb_max:
     
 if jamb_result < jamb_cutOff:
     print('Sorry you are not eligible to write the post utme.......')
-
+    exit()
 else:
     print('Congratulations, You are eligible for to write the post utme and also gain admission')
     sleep(1.5)
@@ -45,9 +45,11 @@ else:
          print('Please enter a valid post utme score: ')  
     while post_utme_result >= post_utme_max:
         post_utme_result = int(input('Enter your post utme score: '))
+        print("Value must not be higer than 100")
 
     if post_utme_result < post_utme_cutOff:
         print('Sorry you are not eligible for admission.......')
+        exit()
     else:
         print('Congratulations on passing the post utme, You are eligible to gain admission')
         sleep(1.5)
@@ -55,8 +57,8 @@ else:
         aggregate = (jamb_result / 8) + (post_utme_result / 2)
 
         print(f'Your aggregate is {aggregate}')
-
         user_input = input('Enter Department you applied for: ').upper()
+    
 
 df = pd.read_csv('2023_cut-off_marks.csv')
 
