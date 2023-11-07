@@ -4,14 +4,11 @@ import pandas as pd
 def all_upper(my_list):
     return [x.upper() for x in my_list]
 
-
-
 # print(new_df.loc[2])
 # pd.options.display.max_rows = 9999
 # print(df.info())
 # print(df.columns)
 # print(df.tail())
-
 
 jamb_cutOff = 200
 jamb_max = 400
@@ -21,14 +18,20 @@ print("*" *100)
 print('Welcome to the University of Ibadan.....')
 print("*" *100)
 sleep(2)
+
 while True:
     try:
         jamb_result = int(input('Enter your jamb score: '))
+        sleep(1)
         break
     except:
-         print('Please enter a valid jamb score: ')       
+         print('Please enter a valid jamb score: ') 
+               
 while jamb_result >= jamb_max:
+    print("Value must not be higher than 400")
     jamb_result = int(input('Enter your jamb score: '))
+    sleep(1)
+        
     
 if jamb_result < jamb_cutOff:
     print('Sorry you are not eligible to write the post utme.......')
@@ -40,12 +43,16 @@ else:
     while True:
         try:
             post_utme_result = int(input('Enter your post utme score: '))
+            sleep(1)
             break
         except:
-         print('Please enter a valid post utme score: ')  
+         print('Please enter a valid post utme score: ') 
+          
     while post_utme_result >= post_utme_max:
+        print("Value must not be higher than 100")
         post_utme_result = int(input('Enter your post utme score: '))
-        print("Value must not be higer than 100")
+        sleep(1)
+        
 
     if post_utme_result < post_utme_cutOff:
         print('Sorry you are not eligible for admission.......')
@@ -59,7 +66,6 @@ else:
         print(f'Your aggregate is {aggregate}')
         user_input = input('Enter Department you applied for: ').upper()
     
-
 df = pd.read_csv('2023_cut-off_marks.csv')
 
 new_df = df.dropna()
